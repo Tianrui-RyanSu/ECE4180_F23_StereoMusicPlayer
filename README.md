@@ -28,6 +28,17 @@ the 2 speakers, and an additional USB connection is needed from mbed to a comput
 ## Software Setup
 
 ## Instruction of Use
+**Hardware (i.e. mbed and circuits)**
+1. Reset button on mbed to reset the system and reload programs stored in mbed.
+2. Twist the 2 potentiometers attached to each speaker for per-channel volume control.
+
+**Software (i.e. BluefruitConnect App)**
+1. Left/right button on the interface for skip backward/forward, respectively.
+2. Numerical button 1 to play or resume after pause audio playback.
+3. Numerical button 2 to pause audio playback.
+4. Numerical button 3 to enable shuffled playlist and play in shuffled mode.
+5. Numerical button 4 to disable shuffled mode to play music in original order.
+6. Up button for a software synchronized system reset. 
 
 ## Demo Video
 [![Watch the video](https://img.youtube.com/vi/6G0gq5Kxjgo/0.jpg)](https://www.youtube.com/watch?v=6G0gq5Kxjgo)
