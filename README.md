@@ -26,7 +26,7 @@ the 2 speakers, and an additional USB connection is needed from mbed to a comput
 ## Hardware Setup
 
 ## Software Setup
-**out of the goodness of this team**<br>
+**friendly reminder...**<br>
 Please change wave_player library for it to work with PWMOut, since there is only one AnalogOut on mbed LPC1768. 
 Also, increase the sd card frequency to 25MHz in SDFileSystem.h (in SDFileSystem.cpp).
 
