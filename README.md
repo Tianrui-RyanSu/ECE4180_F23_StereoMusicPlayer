@@ -30,10 +30,16 @@ the 2 speakers, and an additional USB connection is needed from mbed to a comput
 - [SparkFun microSD Transflash Breakout](https://os.mbed.com/cookbook/SD-Card-File-System)
 - [SD Card (check for specs that works)](https://os.mbed.com/users/simon/notebook/sdcards/)
 - [uLCD-144-G2 128 by 128 Smart Color LCD](https://os.mbed.com/users/4180_1/notebook/ulcd-144-g2-128-by-128-color-lcd/)
-- [Breadboard barrel jack 5V 2A AC Adapter](https://www.sparkfun.com/products/15312)
+- [Breadboard barrel jack 5V 2A AC Adapter](https://www.sparkfun.com/products/15312) <br>
 To ensure power dissipation, we use two 5V power adaptors for the two speaker sets. <br>
 The first speak set is connected to AnalogOut pin on P18, while the second set is connected to PWMOut pin on Pin 21.
 ## Hardware Setup
+**MBED Pin Connection Table** (Look up links above for breakout board pin connections)
+| Name      | Description       | Quantity |
+|-----------|-------------------|----------|
+| Item 1    | First item        | 10       |
+| Item 2    | Second item       | 20       |
+| Item 3    | Third item        | 30       |
 
 ## Software Setup
 **a friendly reminder...**<br>
