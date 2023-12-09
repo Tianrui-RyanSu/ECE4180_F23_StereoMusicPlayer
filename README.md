@@ -30,4 +30,5 @@ the 2 speakers, and an additional USB connection is needed from mbed to a comput
 ## Instruction of Use
 
 ## Demo Video
-[![Watch the video]([https://i.stack.imgur.com/Vp2cE.png](https://i9.ytimg.com/vi_webp/6G0gq5Kxjgo/mq2.webp?sqp=COSL0KsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLAgxXgIwW9Ab43UiKv__rJTrLoZkw)https://i9.ytimg.com/vi_webp/6G0gq5Kxjgo/mq2.webp?sqp=COSL0KsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLAgxXgIwW9Ab43UiKv__rJTrLoZkw)](https://youtu.be/6G0gq5Kxjgo)
+[![Watch the video](https://img.youtube.com/vi/6G0gq5Kxjgo/0.jpg)](https://www.youtube.com/watch?v=6G0gq5Kxjgo)
+
