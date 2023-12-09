@@ -35,7 +35,7 @@ To ensure power dissipation, we use two 5V power adaptors for the two speaker se
 The first speak set is connected to AnalogOut pin on P18, while the second set is connected to PWMOut pin on Pin 21.
 ## Hardware Setup
 **MBED Pin Connection Table** (Look up links above for breakout board pin connections)
-| Name      | Description       | Quantity |
+| MBED LPC1768 Pin     | Parts       | Pin Name |
 |-----------|-------------------|----------|
 | Item 1    | First item        | 10       |
 | Item 2    | Second item       | 20       |
