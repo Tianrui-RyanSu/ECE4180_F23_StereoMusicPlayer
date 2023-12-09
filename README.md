@@ -397,6 +397,6 @@ int main()
 6. Up button for a software synchronized system reset.
 
 ## Demo Video
-**Chiek!**<br>
+**Video... Chiek!**<br><br>
 [![Watch the video](https://img.youtube.com/vi/6G0gq5Kxjgo/0.jpg)](https://www.youtube.com/watch?v=6G0gq5Kxjgo)
 
