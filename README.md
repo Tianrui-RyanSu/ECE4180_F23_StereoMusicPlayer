@@ -1,3 +1,6 @@
-# ECE4180_F23_StereoMusicPlayer
-This page is for ECE4180 Fall2023 Final Project: Stereo Music Player
+# Stereo Music Player
+**ECE 4180 Fall 2023 Final Project**
+**Team Members:** Ryan Su, Zili He
+
+
 
