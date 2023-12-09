@@ -5,3 +5,16 @@
 ![project setup image](/Images/setup.JPG)
 
 # Table of Contents
+
+# Overview
+
+# Parts List
+
+# Hardware Setup
+
+# Software Setup
+
+# Instruction of Use
+
+# Demo Video
+
