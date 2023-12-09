@@ -22,4 +22,4 @@
 ## Instruction of Use
 
 ## Demo Video
-[![Demo Video](https://i.stack.imgur.com/Vp2cE.png)](https://studio.youtube.com/video/6G0gq5Kxjgo/edit)
+![Demo Video](https://www.youtube.com/watch?v=6G0gq5Kxjgo)
