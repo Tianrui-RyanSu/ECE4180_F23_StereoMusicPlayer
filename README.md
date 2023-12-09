@@ -38,21 +38,8 @@ the 2 speakers, and an additional USB connection is needed from mbed to a comput
 #include <algorithm>
 
 #define NUMSONGS 6     // number of songs on SD card
-#define SCALE 0.83  // Scaling factor due to slow play rate of speaker
 
-// add uLCD album art instead of song name,
-// when playing, enlarge the album art
-
-// have a second page designed to show title, artist, and playing modes in use
-// update the progress bar to reflect actual song length
-
-// play(1), pause(2), skip, back-track, switch (song title, playing modes, artists) 
-// and album art (up/down)
-// shuffle(4) randomize songList[], ordered(4) sorted songList[]
-
-// System I/O
 SDFileSystem sd1(p5, p6, p7, p8, "SD"); 
-//SDFileSystem sd2(p11, p12, p13, p14, "SD");
 uLCD_4DGL uLCD(p9, p10, p30);
 Serial blue(p28, p27);
 DigitalOut led1(LED1);
@@ -92,12 +79,10 @@ void LCD_ctrl(void const *argument)
 
     while(1)
     {
-        // Calculate progress bar length
         timer_mtx.lock();
-        ind = (((float) t.read() / song_len[songId]) * 112.0 * SCALE) + 8;
+        ind = (((float) t.read() / song_len[songId]) * 112.0 * 0.83) + 8;
         timer_mtx.unlock();
         
-        // Draw play/pause icon and progress bar.,kl
         serial_mtx.lock();
         uLCD.circle(34, 25, 20, WHITE);
         uLCD.circle(94, 25, 20, WHITE);
@@ -108,7 +93,6 @@ void LCD_ctrl(void const *argument)
             uLCD.filled_circle(94, 25, 15, 0x0ABAB5);
         }
 
-        // Draw icon
         if (play) {
             uLCD.filled_circle(34, 25, 18, BLACK);
             uLCD.triangle(26, 15, 26, 35, 46, 25, WHITE);
@@ -119,14 +103,12 @@ void LCD_ctrl(void const *argument)
             uLCD.rectangle(38, 15, 42, 35, WHITE);
         } 
         
-        // Print timestamp
         uLCD.locate(4, 13);
         timer_mtx.lock();
         uLCD.printf("%d:%02d/%d:%02d", (int) t.read()/60, (int) t.read() % 60,
-                    (int) (song_len[songId]/SCALE) / 60, (int) (song_len[songId]/SCALE) % 60);
+                    (int) (song_len[songId]/0.83) / 60, (int) (song_len[songId]/0.83) % 60);
         timer_mtx.unlock();
         
-        // Print progress bar
         uLCD.rectangle(8, 116, 120, 120, WHITE);
         uLCD.filled_rectangle(9, 117, ind, 119, WHITE);
             
@@ -158,16 +140,13 @@ void play_left(void const *argument)
         else printf("successfully opened file in left\n\n\r");
         file_mtx.unlock();
 
-        // Erase previous name
         serial_mtx.lock();
         uLCD.filled_rectangle(5, 40, 127, 100, BLACK);
         serial_mtx.unlock();
 
-        // Calculate middle position for song title on screen
         int len = song_title_line1[songQueue[songId]].length();
         int pixels = 128 - (len * 8);
         
-        // Print song name on screen
         if (shuffle) {
             serial_mtx.lock();
             uLCD.locate(pixels/14 + 1, 7);
@@ -188,11 +167,9 @@ void play_left(void const *argument)
         uLCD.printf(song_title_line2[songQueue[songId]].c_str());
         serial_mtx.unlock();
         
-        // Play the song
         finished_left = waver_left.play(wave_file_left);
 
         if (!skip)
-            // Increment songId to next song
             songId = (songId < NUMSONGS - 1) ? (songId + 1) : 0; 
         else {
             waver_left.end_song();
@@ -217,22 +194,18 @@ void play_left(void const *argument)
         }
             
         
-        // Erase progress bar
         serial_mtx.lock();
         uLCD.filled_rectangle(8, 116, 127, 120, BLACK);
         serial_mtx.unlock();
         
-        // Reset timer
         timer_mtx.lock();
         t.reset();
         timer_mtx.unlock();
 
-        // Execute every 0.1 sec
         Thread::wait(50);         
     }      
 }
 
-// Play the music for the current song ID 
 void play_right(void const *argument)
 {
     string path_right;
@@ -253,7 +226,6 @@ void play_right(void const *argument)
         else printf("successfully opened file in right\n\n\r");
         file_mtx.unlock();
             
-        // Play the song
         finished_right = waver_right.play(wave_file_right);
 
         if (!skip)
@@ -281,7 +253,6 @@ void play_right(void const *argument)
             }
         } 
 
-        // Execute every 0.1 sec
         Thread::wait(50);         
     }    
 }
@@ -289,7 +260,6 @@ void play_right(void const *argument)
 
 int main() 
 {    
-    // Initialize LCD settings
     uLCD.cls();
     uLCD.baudrate(9600);
 
@@ -301,7 +271,6 @@ int main()
     waver_right.pause();
     waver_right.no_end_song();
     
-    // Start threads
     Thread t1(LCD_ctrl);
     Thread t2(play_left);
     Thread t3(play_right);
@@ -311,7 +280,6 @@ int main()
 
     int blue_count = 0;
 
-    // Poll bluetooth module
     while(1) {
         // If it's valid
         if(blue.readable()) {
@@ -412,14 +380,9 @@ int main()
         // Poll every 0.075 sec
         Thread::wait(125);
     }
-
-    // wave_file = fopen("/SD/aurora_left.wav", "r");
-    // if (wave_file == NULL) printf("file open error!\n\n\r");
-    // else printf("successfully opened file\n\n\r");
-    // waver_left.play(wave_file);
-    // fclose(wave_file);
 }
 ```
+
 ## Instruction of Use
 **Hardware (i.e. mbed and circuits)**
 1. Reset button on mbed to reset the system and reload programs stored in mbed.
