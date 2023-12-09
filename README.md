@@ -2,7 +2,7 @@
 **ECE 4180 Fall 2023 Final Project**<br>
 **Team Members:** Ryan Su, Zili He
 
-![project setup image](/Images/setup.JPG)
+![project setup image](https://github.com/Tianrui-RyanSu/ECE4180_F23_StereoMusicPlayer/blob/main/Images/setup.JPG)
 
 ## Table of Contents
 
