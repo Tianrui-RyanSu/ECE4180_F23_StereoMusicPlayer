@@ -37,9 +37,19 @@ The first speak set is connected to AnalogOut pin on P18, while the second set i
 **MBED Pin Connection Table** (Look up links above for breakout board pin connections)
 | MBED LPC1768 Pin     | Parts       | Pin Name |
 |-----------|-------------------|----------|
-| Item 1    | First item        | 10       |
-| Item 2    | Second item       | 20       |
-| Item 3    | Third item        | 30       |
+| P5        | SD Reader       | DI       |
+| P6        | SD Reader       | DO       |
+| P7        | SD Reader       | SCK      |
+| P8        | SD Reader       | CS       |
+| P9        | uLCD            | RX       |
+| P10       | uLCD            | TX       |
+| P15       | uLCD            | Reset    |
+| P18       | Class D AMP 1   | IN +     |
+| P21       | Class D AMP 2   | IN +     |
+| P27       | Bluefruit       | RXI      |
+| P28       | Bluefruit       | TXO      |
+
+
 
 ## Software Setup
 **a friendly reminder...**<br>
