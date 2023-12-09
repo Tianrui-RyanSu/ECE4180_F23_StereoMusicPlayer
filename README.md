@@ -22,6 +22,15 @@ There is also a potentiometer connected to each of the speakers to enable volume
 the 2 speakers, and an additional USB connection is needed from mbed to a computer for power and code changes. 
 
 ## Parts List
+- [MBED LPC1768](https://os.mbed.com/platforms/mbed-LPC1768/)
+- [Sparkfun TPA2005D1 Class D Audio Amp](https://os.mbed.com/users/4180_1/notebook/tpa2005d1-class-d-audio-amp/) * 2
+- [Sparkfun small breadboard friendly speaker](https://www.sparkfun.com/products/11089) * 2
+- [Adafruit Bluefruit LE UART Friend](https://os.mbed.com/users/4180_1/notebook/adafruit-bluefruit-le-uart-friend---bluetooth-low-/)
+- [Potentiometer](https://os.mbed.com/components/Potentiometer/) * 2
+- [SparkFun microSD Transflash Breakout](https://os.mbed.com/cookbook/SD-Card-File-System)
+- [SD Card (check for specs that works)](https://os.mbed.com/users/simon/notebook/sdcards/)
+- [uLCD-144-G2 128 by 128 Smart Color LCD](https://os.mbed.com/users/4180_1/notebook/ulcd-144-g2-128-by-128-color-lcd/)
+- [Breadboard barrel jack 5V 2A AC Adapter](https://www.sparkfun.com/products/15312)
 
 ## Hardware Setup
 
