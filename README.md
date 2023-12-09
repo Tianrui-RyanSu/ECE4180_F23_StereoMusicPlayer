@@ -2,6 +2,6 @@
 **ECE 4180 Fall 2023 Final Project**<br>
 **Team Members:** Ryan Su, Zili He
 
-![project setup image](/Images/setup.PNG)
+![project setup image](/Images/setup.JPG)
 
 # Table of Contents
