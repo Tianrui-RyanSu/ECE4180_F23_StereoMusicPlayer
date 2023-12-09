@@ -37,7 +37,7 @@ the 2 speakers, and an additional USB connection is needed from mbed to a comput
 #include <string>
 #include <algorithm>
 
-#define NUMSONGS 6     // number of songs on SD card
+#define NUMSONGS 6 
 
 SDFileSystem sd1(p5, p6, p7, p8, "SD"); 
 uLCD_4DGL uLCD(p9, p10, p30);
@@ -72,7 +72,6 @@ volatile bool shuffle = false;
 
 char msg[256];
 
-// Display progress bar and status
 void LCD_ctrl(void const *argument)
 {   
     int ind;  
@@ -287,20 +286,20 @@ int main()
             serial_mtx.lock();
             printf("current song: %d, %d. %d\n\n\r", songQueue[songId], songId, blue_count);
             if (blue.getc()=='!') {
-                if (blue.getc()=='B') { //button data packet
-                    bnum = blue.getc(); //button number
-                    bhit = blue.getc(); //1=hit, 0=release
-                    if (blue.getc()==char(~('!' + 'B' + bnum + bhit))) { //checksum OK?
+                if (blue.getc()=='B') { 
+                    bnum = blue.getc(); 
+                    bhit = blue.getc(); 
+                    if (blue.getc()==char(~('!' + 'B' + bnum + bhit))) {
                         switch (bnum) {
                             case '1': // play @ number_1
                                 if (bhit=='1' && !play) {
                                     led1 = 1;
 
-                                    waver_left.resume();  // Enable wave player
+                                    waver_left.resume();  
                                     waver_right.resume();
 
                                     timer_mtx.lock();
-                                    t.start();              // Enable timer
+                                    t.start();            
                                     timer_mtx.unlock();
                                     
                                     play = true;
@@ -310,11 +309,11 @@ int main()
                                 if (bhit=='1' && play) {
                                     led1 = 0;
 
-                                    waver_left.pause();   // Disable wave player
+                                    waver_left.pause();   
                                     waver_right.pause();
                                     
                                     timer_mtx.lock();
-                                    t.stop();               // Stop the timer
+                                    t.stop();              
                                     timer_mtx.unlock();
                                     
                                     play = false;
