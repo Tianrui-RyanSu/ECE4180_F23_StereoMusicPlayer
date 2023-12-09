@@ -113,12 +113,10 @@ void LCD_ctrl(void const *argument)
             
         serial_mtx.unlock();
         
-        // Run every 0.25 sec
         Thread::wait(87);
     }
 }
 
-// Play the music for the current song ID 
 void play_left(void const *argument)
 {
     string path_left;
